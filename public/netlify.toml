@@ -1,0 +1,23 @@
+[build]
+  base = "" 
+  publish = "public" 
+  functions = "functions" 
+
+[build.environment]
+  NODE_VERSION = "18" 
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Access-Control-Allow-Origin = "*"
+
+[dev]
+  autoLaunch = true
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
